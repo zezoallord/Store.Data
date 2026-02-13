@@ -1,0 +1,9 @@
+Changed database context to 'StoreDBG01'.
+MigrationId                                                                                                                                            ProductVersion                  
+------------------------------------------------------------------------------------------------------------------------------------------------------ --------------------------------
+20240923184034_addproducttables                                                                                                                        8.0.8                           
+20241004202025_AddDelivryMethodTable                                                                                                                   8.0.8                           
+20241011120832_AddOrderTables                                                                                                                          8.0.8                           
+20241012194332_AddpaymentintentidToOrderTable                                                                                                          8.0.8                           
+
+(4 rows affected)
