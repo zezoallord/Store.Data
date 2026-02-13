@@ -321,3 +321,4 @@ C:\Users\zeyad\OneDrive\Desktop\Store.Web-main\Store.Web\bin\Debug\net8.0\NuGet.
 C:\Users\zeyad\OneDrive\Desktop\Store.Web-main\Store.Web\bin\Debug\net8.0\System.Formats.Asn1.dll
 C:\Users\zeyad\OneDrive\Desktop\Store.Web-main\Store.Web\bin\Debug\net8.0\System.Security.Cryptography.Pkcs.dll
 C:\Users\zeyad\OneDrive\Desktop\Store.Web-main\Store.Web\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll
+C:\Users\zeyad\OneDrive\Desktop\Store.Web-main\Store.Web\obj\Debug\net8.0\Store.Web.sourcelink.json

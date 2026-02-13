@@ -19,7 +19,7 @@ namespace Store.Web.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<IReadOnlyList<BrandTypeDetailsDto>>> GetAllBrands() 
+        public async Task<ActionResult<IReadOnlyList<BrandTypeDetailsDto>>> GetAllBrands()
             => Ok(await _productService.GetAllBrandsAsync());
         [HttpGet]
         public async Task<ActionResult<IReadOnlyList<BrandTypeDetailsDto>>> GetAllTypes()

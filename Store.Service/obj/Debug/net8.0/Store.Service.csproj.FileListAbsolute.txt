@@ -33,3 +33,4 @@ C:\Users\zeyad\OneDrive\Desktop\Store.Web-main\Store.Service\obj\Debug\net8.0\St
 C:\Users\zeyad\OneDrive\Desktop\Store.Web-main\Store.Service\obj\Debug\net8.0\refint\Store.Service.dll
 C:\Users\zeyad\OneDrive\Desktop\Store.Web-main\Store.Service\obj\Debug\net8.0\Store.Service.pdb
 C:\Users\zeyad\OneDrive\Desktop\Store.Web-main\Store.Service\obj\Debug\net8.0\ref\Store.Service.dll
+C:\Users\zeyad\OneDrive\Desktop\Store.Web-main\Store.Service\obj\Debug\net8.0\Store.Service.sourcelink.json

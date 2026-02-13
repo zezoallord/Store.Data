@@ -11,7 +11,16 @@ export default function ProductList(){
     setLoading(true)
     getProducts()
       .then(data => setProducts(data || []))
-      .catch(err => setError(err.message || 'Failed to load'))
+      .catch(err => {
+        console.error('getProducts error:', err)
+        if (err && err.isNetworkError) {
+          setError('Network error or CORS issue. Check server and browser console.')
+        } else if (err && err.status === 401) {
+          setError('You must sign in to view products')
+        } else {
+          setError(err.message || 'Failed to load')
+        }
+      })
       .finally(()=>setLoading(false))
   },[])
 
