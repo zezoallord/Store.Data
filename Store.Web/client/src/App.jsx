@@ -1,28 +1,25 @@
-import React, { useState } from 'react'
-import ProductList from './components/ProductList'
-import Login from './components/Login'
-import { getToken } from './api/api'
+import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Layout from './components/Layout';
+import ProductsPage from './components/ProductsPage';
+import LoginPage from './components/LoginPage';
+import RegisterPage from './components/RegisterPage';
+import BasketPage from './components/BasketPage';
 
-export default function App(){
-  const [authToggle, setAuthToggle] = useState(0)
-  const triggerRefresh = () => setAuthToggle(t => t + 1)
-
+function App() {
   return (
-    <div>
-      <header style={{background:'#1f6feb',color:'#fff',padding:12}}> 
-        <h1 style={{margin:0}}>Store</h1>
-      </header>
-      <main style={{padding:18}}>
-        <div style={{display:'flex',gap:20}}>
-          <div style={{flex:1}}>
-            <Login onLogin={triggerRefresh} />
-          </div>
-          <div style={{flex:3}}>
-            <ProductList key={authToggle} />
-          </div>
-        </div>
-      </main>
-      <footer style={{padding:12,textAlign:'center',color:'#666'}}>Built with React + Vite</footer>
-    </div>
-  )
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<ProductsPage />} />
+          <Route path="products" element={<ProductsPage />} />
+          <Route path="login" element={<LoginPage />} />
+          <Route path="register" element={<RegisterPage />} />
+          <Route path="basket" element={<BasketPage />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  );
 }
+
+export default App;

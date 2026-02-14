@@ -13,7 +13,12 @@ namespace Store.Service.Services.BasketService.Dtos
         public BasketProfile()
         {
             CreateMap<CustomerBasket, CustomerBasketDto>().ReverseMap();
-            CreateMap<BasketItem, BasketItemDto>().ReverseMap();
+
+            CreateMap<BasketItem, BasketItemDto>()
+                .ForMember(dest => dest.Price, opt => opt.MapFrom(src => src.ProductPrice));
+
+            CreateMap<BasketItemDto, BasketItem>()
+                .ForMember(dest => dest.ProductPrice, opt => opt.MapFrom(src => src.Price));
         }
     }
 }
