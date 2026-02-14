@@ -28,20 +28,21 @@ namespace Store.Service.Services.BasketService
         {
             var basket = await _basketRepository.GetBasketAsync(basketId);
             if (basket == null)
-                return new CustomerBasketDto();
+                return new CustomerBasketDto { Id = basketId };
+            
             var mappedBasket = _mapper.Map<CustomerBasketDto>(basket);
             return mappedBasket;
         }
 
         public async Task<CustomerBasketDto> UpdateBasketAsync(CustomerBasketDto input)
         {
-            if (input.Id is null)
+            if (string.IsNullOrEmpty(input.Id))
                 input.Id = GeneratRandomBasketId();
 
             var customerBasket = _mapper.Map<CustomerBasket>(input);
             var updatedBasket = await _basketRepository.UpdateBasketAsync(customerBasket);
-            var mappedUpdatedBasket = _mapper.Map<CustomerBasketDto>(updatedBasket);
-            return mappedUpdatedBasket;
+            
+            return _mapper.Map<CustomerBasketDto>(updatedBasket);
         }
 
         private string GeneratRandomBasketId()

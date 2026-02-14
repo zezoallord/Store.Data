@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "0T/h/CXUSBMOVvsTEfFiNf+fANEa/yfexEO6GfwrMWs=",
+  "Hash": "bNM2b9O2Awq99M5tgB+lkLhlOXOLDtFkxrqrnfg0ADg=",
   "Source": "Store.Web",
   "BasePath": "_content/Store.Web",
   "Mode": "Default",
@@ -34,6 +34,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\_built_products.json"
+    },
+    {
+      "Identity": "C:\\Users\\zeyad\\OneDrive\\Desktop\\Store.Web-main\\Store.Web\\wwwroot\\app\\assets\\index-0K1_8vfX.js",
+      "SourceId": "Store.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\zeyad\\OneDrive\\Desktop\\Store.Web-main\\Store.Web\\wwwroot\\",
+      "BasePath": "_content/Store.Web",
+      "RelativePath": "app/assets/index-0K1_8vfX.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\app\\assets\\index-0K1_8vfX.js"
     },
     {
       "Identity": "C:\\Users\\zeyad\\OneDrive\\Desktop\\Store.Web-main\\Store.Web\\wwwroot\\app\\assets\\index-8R-dK-dm.js",

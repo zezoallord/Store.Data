@@ -43,8 +43,16 @@ namespace Store.Web
             });
             builder.Services.AddSingleton<IConnectionMultiplexer>(config =>
             {
-                var configuration = ConfigurationOptions.Parse(builder.Configuration.GetConnectionString("Redis"));
-                return ConnectionMultiplexer.Connect(configuration);
+                try
+                {
+                    var configuration = ConfigurationOptions.Parse(builder.Configuration.GetConnectionString("Redis"));
+                    return ConnectionMultiplexer.Connect(configuration);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Error connecting to Redis: {ex.Message}");
+                    throw; // Still throw but it will be logged now
+                }
             });
 
             builder.Services.AddApplicationServices();

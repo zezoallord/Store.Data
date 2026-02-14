@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { getProducts, getBasket, updateBasket } from '../api/api';
+import ProductCard from './ProductCard';
 
 export default function ProductsPage() {
     const [products, setProducts] = useState([]);
@@ -42,8 +43,8 @@ export default function ProductsPage() {
                     price: product.price,
                     quantity: 1,
                     pictureUrl: product.pictureUrl,
-                    brandName: product.productBrand,
-                    typeName: product.productType
+                    brandName: product.brandName,
+                    typeName: product.typeName
                 });
             }
 
@@ -71,12 +72,11 @@ export default function ProductsPage() {
             ) : (
                 <div className="product-grid">
                     {products.map(product => (
-                        <div key={product.id} className="product-card">
-                            <img src={product.pictureUrl} alt={product.name} className="product-image" />
-                            <h3>{product.name}</h3>
-                            <p>${product.price}</p>
-                            <button onClick={() => addToBasket(product)}>Add to Basket</button>
-                        </div>
+                        <ProductCard
+                            key={product.id}
+                            product={product}
+                            onAddToBasket={addToBasket}
+                        />
                     ))}
                 </div>
             )}

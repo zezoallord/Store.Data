@@ -6,7 +6,9 @@ using Store.Service.Services.BasketService;
 namespace Store.Web.Controllers
 {
 
-    public class BasketController : BaseController
+    [Route("api/[controller]")]
+    [ApiController]
+    public class BasketController : ControllerBase
     {
         private readonly IBasketService _basketService;
 
@@ -20,7 +22,7 @@ namespace Store.Web.Controllers
             => Ok(await _basketService.GetBasketAsync(id));
 
         [HttpPost]
-        public async Task<ActionResult<CustomerBasketDto>> UpdateBasketAsync(CustomerBasketDto basket)
+        public async Task<ActionResult<CustomerBasketDto>> UpdateBasketAsync([FromBody] CustomerBasketDto basket)
             => Ok(await _basketService.UpdateBasketAsync(basket));
 
         [HttpDelete("{id}")]

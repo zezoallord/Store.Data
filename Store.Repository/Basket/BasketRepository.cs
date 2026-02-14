@@ -19,14 +19,22 @@ public class BasketRepository : IBasketRepository
     public async Task<CustomerBasket> GetBasketAsync(string basketId)
     {
         var basket = await _database.StringGetAsync(basketId);
-        return basket.IsNullOrEmpty ? null : JsonSerializer.Deserialize<CustomerBasket>(basket);
+        if (basket.IsNullOrEmpty) return null;
+
+        var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
+        return JsonSerializer.Deserialize<CustomerBasket>(basket, options);
     }
 
     public async Task<CustomerBasket> UpdateBasketAsync(CustomerBasket basket)
     {
-        var isCreated = await _database.StringSetAsync(basket.Id, JsonSerializer.Serialize(basket), TimeSpan.FromDays(30));
+        var options = new JsonSerializerOptions { PropertyNamingPolicy = JsonNamingPolicy.CamelCase };
+        var json = JsonSerializer.Serialize(basket, options);
+        
+        var isCreated = await _database.StringSetAsync(basket.Id, json, TimeSpan.FromDays(30));
+        
         if (!isCreated)
             return null;
+            
         return await GetBasketAsync(basket.Id);
     }
 }
